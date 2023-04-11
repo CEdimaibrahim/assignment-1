@@ -1,31 +1,3 @@
-public class Main
-{
-  public static void main (String[]args)  {
-    System.out.println ("sum of Even " + sumOfEVEN (0, 100, 0));
-    System.out.println ("sum off odd " + sumOfOdd (0, 100, 0));
-  } 
-  
-  public static int sumOfEVEN (int start, int end, int sum) {
-    if (start > end)
-        return sum;
-        
-    if(start%2 == 0)
-        sum+=start;
-        
-    return sumOfEVEN (start + 1, end, sum);
-  }
-  
-  public static int sumOfOdd (int start, int end, int sum)  {
-    if (start > end)
-        return sum;
-        
-    if(start%2 != 0){
-        sum+=start;
-    }
-        
-    return sumOfOdd (start + 1, end, sum);
-  }
-}
 Public  class Main
 {
  Public static void main (string[]args)
@@ -37,6 +9,6 @@ public static int sumOfOdd(int start, int end, int sum){
     return start>end ? sum : sumOfOdd(start+1,end,sum + (start%2!=0 ? start : 0));
  }
 public static int sumOfeven(int start, int end, int sum){
-    return start>end ? sum : sumOfeven(start+1,end,sum + (start%2!=0 ? start : 0));
+    return start>end ? sum : sumOfeven(start+1,end,sum + (start%2==0 ? start : 0));
  }
 }
