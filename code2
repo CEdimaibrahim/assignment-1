@@ -1,19 +1,20 @@
-public class Main {
-    public static void main(String[] args) {
-    System.out.println("sum of Even  " + sumOfEVEN());
-    System.out.println("sum off odd " + sumOfOdd());
 
-    }
- public static int sumOfEVEN(int start, int end, int sum){
-             return start>end
-                     ?sum
-                     :sumOfEVEN(start: start+1,end,sum);
+public class Main
+{
+  public static void main (String[]args)  {
+    System.out.println ("sum of Even " + sumOfEVEN (0, 100, 0));
+    System.out.println ("sum off odd " + sumOfOdd (0, 100, 0));
+  } 
+  
+  public static int sumOfEVEN (int start, int end, int sum) {
+  if (start % 2 ==0 && start<=end)
+        sum+=start;
+    return start > end ? sum : sumOfEVEN (start + 1, end, sum);
   }
   
-public static int sumOfOdd(int start, int end, int sum){
-              return start>end
-                       ?sum
-                       :sumOfOdd(start: start+1,end,sum:sum+(start%2!=0));
-                       
- }
- }
+  public static int sumOfOdd (int start, int end, int sum)  {
+    if (start % 2 !=0 && start<=end)
+        sum+=start;
+    return start > end ? sum : sumOfOdd (start + 1, end, sum);
+  }
+}
